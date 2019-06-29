@@ -7,6 +7,6 @@ branches:
 install:
   mvn clean compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
-  mvn clean install
+  mvn clean package
 after_script:
-  mvn coveralls:report
+  mvn clean test jacoco:report coveralls:report
