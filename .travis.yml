@@ -1,0 +1,8 @@
+language: java
+java:
+  oraclejdk8
+branches:
+  only:
+    - master
+script:
+  mvn clean install
