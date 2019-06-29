@@ -4,5 +4,9 @@ java:
 branches:
   only:
     - master
+install:
+  mvn clean compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
   mvn clean install
+after_script:
+  mvn coveralls:report
