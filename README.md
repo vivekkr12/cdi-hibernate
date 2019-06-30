@@ -1,5 +1,7 @@
 # Hibernate with CDI (Contextual Dependency Injection)
 
+[![Build Status](https://travis-ci.com/vivekkr12/cdi-hibernate.svg?branch=master)](https://travis-ci.com/vivekkr12/cdi-hibernate) [![Coverage Status](https://coveralls.io/repos/github/vivekkr12/cdi-hibernate/badge.svg?branch=master)](https://coveralls.io/github/vivekkr12/cdi-hibernate?branch=master)
+
 #### Using CDI to reduce Hibernate boilerplate like session open / close and transaction begin / commit / rollback
 
 This is an example to demonstrate how CDI can be used to reduce hibernate boilerplate. Since [Hibernate Sessions](http://docs.jboss.org/hibernate/orm/5.1/javadocs/org/hibernate/Session.html) are non thread safe, in most scenarios, Session per thread or Session per request is desired. This method creates a wrapper for [Hibernate SessionFactory](http://docs.jboss.org/hibernate/orm/5.1/javadocs/org/hibernate/SessionFactory.html) and provides most commonly used APIs. Using CDI, [`@RequestScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/RequestScoped.html) Sessions are opned and closed automcatically. Transactions are managed using an Interceptor.
